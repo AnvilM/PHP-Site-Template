@@ -1,0 +1,66 @@
+/* Main elements */
+.interactive-element{
+    background-color: var(--interactive-color);
+    cursor: pointer;
+
+    transition: .1s ease-out background-color;
+}
+
+.interactive-element:hover{
+    background-color: var(--active-color);
+}
+
+.interactive-element_2{
+    border-radius: 10px;
+    border: 1px #3f3f4e solid;
+    transition: .1s ease-out background-color;
+}
+
+.interactive-element_2:hover{
+    background-color: #00000034;
+}
+
+.link{
+    color: var(--interactive-color);
+
+}
+
+.link:hover{
+    color: var(--active-color);
+
+}
+
+/* Text elements */
+
+
+.headline{
+    padding: 10px 0;
+
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.notice{
+    border-radius: 10px;
+    border: 1px #3f3f4e solid;
+    padding: 20px 10px;
+}
+
+
+
+
+/* other */
+
+
+
+
+.button{
+    padding: 5px 20px;
+    border-radius: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+
+
