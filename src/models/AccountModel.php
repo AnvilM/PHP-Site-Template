@@ -40,8 +40,13 @@ class AccountModel extends Model{
         return $arr;
     }
 
+
     public function delSession($Login, $SessionId){
         return $this->db->query("DELETE FROM `session` WHERE `Login` = '$Login' AND `SessionId` = '$SessionId'");
+    }
+
+    public function del_all_Session($Login, $SessionId){
+        return $this->db->query("DELETE FROM `session` WHERE `Login` = '$Login' AND `SessionId` != '$SessionId'");
     }
 
 

@@ -313,11 +313,14 @@ Class AccountController extends Controller{
 
     public function SessionsAction(){
         
-        
+        if(isset($_GET['del_all'])){
+            $this->model->del_all_Session($_SESSION['Login'], session_id());
+            header('Location: /account/sessions');
+        }
 
         $Sessions = $this->model->getSession($_SESSION['Login'], session_id());
         
-        $this->view->render([mysqli_fetch_all($Sessions[0]), mysqli_fetch_all($Sessions[1])]);
+        $this->view->render(['all' => mysqli_fetch_all($Sessions[0]), 'cur' => mysqli_fetch_all($Sessions[1])]);
     }
     
 

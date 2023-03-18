@@ -27,6 +27,14 @@ abstract class Controller{
         if(isset($_SESSION['Login'])){
             $this->model->updateSession(time(), $_SESSION['Login'], session_id());
         }
+        if(isset($_SESSION['Login'])){
+            if(mysqli_num_rows($this->model->checkSession($_SESSION['Login'], session_id())) < 1){
+                $this->model->delSession($_SESSION['Login'], session_id());
+                unset($_SESSION['Login']);
+                header('Location: /');
+                exit();
+            }
+        }
         
     }
 
