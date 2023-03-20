@@ -319,6 +319,10 @@ Class AccountController extends Controller{
             $this->model->del_all_Session($_SESSION['Login'], session_id());
             header('Location: /account/sessions');
         }
+        else if(isset($_GET['close'])){
+            $this->model->delSession($_SESSION['Login'], $_GET['close']);
+            header('Location: /account/sessions');
+        }
 
         $Sessions = $this->model->getSession($_SESSION['Login'], session_id());
         

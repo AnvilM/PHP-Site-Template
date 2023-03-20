@@ -22,7 +22,7 @@ function show(element){
 }
 
 
-function aboutShow(location, lastActive, time, browser, Ip, Os, device, closed){
+function aboutShow(location, lastActive, time, browser, Ip, Os, device, closed, sessionId){
     const about = document.getElementById('about');
 
     about.children[0].children[0].children[1].children[0].children[0].children[1].innerHTML = location
@@ -36,6 +36,7 @@ function aboutShow(location, lastActive, time, browser, Ip, Os, device, closed){
     about.children[0].children[0].children[0].children[0].children[1].innerHTML = Os
     about.children[0].children[0].children[0].children[0].children[2].innerHTML = time
 
+    about.children[0].children[0].children[1].children[1].value = sessionId
 
     if(about.style.top == '0px'){
         about.style.top = '100%';

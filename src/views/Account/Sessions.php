@@ -3,7 +3,7 @@
         <div class="sessionForm-title">Текущий сеанс</div>
         <div class="list">
             <?php $device = preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $vars['cur'][0][4]) ? 'phone' : 'pc'; ?>
-            <div class="element" onclick="aboutShow('<?= $vars['cur'][0][3] ?>','<?= date('j.n.Y в H:i', $vars['cur'][0][7]) ?>','<?= date('j.n.Y в H:i', $vars['cur'][0][6]) ?>','<?= $vars['cur'][0][5] ?>','<?= $vars['cur'][0][2] ?>','<?= $vars['cur'][0][4] ?>','<?=$device?>', 'false')">
+            <div class="element" onclick="aboutShow('<?= $vars['cur'][0][3] ?>','<?= date('j.n.Y в H:i', $vars['cur'][0][7]) ?>','<?= date('j.n.Y в H:i', $vars['cur'][0][6]) ?>','<?= $vars['cur'][0][5] ?>','<?= $vars['cur'][0][2] ?>','<?= $vars['cur'][0][4] ?>','<?=$device?>', 'false','<?= $vars['cur'][0][1] ?>')">
                 <div class="icon">
                     <img src="/public/icons/<?=$device?>-icon.svg" alt="">
                 </div>
@@ -29,7 +29,7 @@
                         $device = preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $vars['all'][$i][4]) ? 'phone' : 'pc';
                         
                         echo '
-                        <div class="element" onclick="aboutShow(`'.$vars['all'][$i][3].'`, `'.date('j.n.Y в H:i', $vars['all'][$i][7]).'`, `'.date('j.n.Y в H:i', $vars['all'][$i][6]).'`, `'.$vars['all'][$i][5].'`, `'.$vars['all'][$i][2].'`, `'.$vars['all'][$i][4].'`, `'.$device.'`, `false`)">
+                        <div class="element" onclick="aboutShow(`'.$vars['all'][$i][3].'`, `'.date('j.n.Y в H:i', $vars['all'][$i][7]).'`, `'.date('j.n.Y в H:i', $vars['all'][$i][6]).'`, `'.$vars['all'][$i][5].'`, `'.$vars['all'][$i][2].'`, `'.$vars['all'][$i][4].'`, `'.$device.'`, `false`, `'.$vars['all'][$i][1].'`)">
                             <div class="icon">
                                 <img src="/public/icons/'.$device.'-icon.svg" alt="">
                             </div>
@@ -121,8 +121,7 @@
                             <div class="text">182.126.64.23</div>
                         </div>
                     </div>
-                    <input type="hidden" name="sessionid" value="">
-                    <button class="close-all button interactive-element" name="close">Завершить сессию</button>
+                    <button class="close-all button interactive-element" name="close" value="">Завершить сессию</button>
                 </form>
             </div>
             <div class="close" onclick="aboutShow()">
