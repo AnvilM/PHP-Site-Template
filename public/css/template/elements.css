@@ -64,3 +64,41 @@
 
 
 
+/* about */
+
+.about{
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: .4s ease-out;
+
+    
+}
+
+.about > .data{
+    display: flex;
+}
+.about > .data > .content{
+    border-radius: 10px;
+    padding: 5px 10px;
+    min-width: 330px;
+    width: 330px;
+    height: 500px;
+    background-color: #29292e;
+}
+
+.about > .data > .close{
+    
+    height: 20px;
+    width: 20px;
+    background-color: #29292e;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+}

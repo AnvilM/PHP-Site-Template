@@ -16,8 +16,10 @@ Class AccountController extends Controller{
             $response = $this->model->getUser($_POST['Login'], hash('sha256', $_POST['Password']));
             if(mysqli_num_rows($response) >= 1){
 
+
+                
                 $_SESSION['Login'] = mysqli_fetch_assoc($response)['Login'];
-                $this->model->addSession($_SESSION['Login'], session_id(), '128.256.43.84', 'Moscow', 'Windeows', 'Chrome', time());
+                $this->model->addSession($_SESSION['Login'], session_id(), '128.256.43.84', 'Moscow', $this->model->getOS(), 'Chrome', time());
                 header('Location: /');
             }
             else{
@@ -177,7 +179,7 @@ Class AccountController extends Controller{
             if($_SESSION['Temp_Signup']['Code_hash'] === $code_hash){
                 $this->model->AddUser($_SESSION['Temp_Signup']['Login'], hash('sha256', $_SESSION['Temp_Signup']['Password']), $_SESSION['Temp_Signup']['Email'], time());
                 $_SESSION['Login'] = mysqli_fetch_assoc($this->model->getUser($_SESSION['Temp_Signup']['Login'], hash('sha256', $_SESSION['Temp_Signup']['Password'])))['Login'];
-                $this->model->addSession($_SESSION['Login'], session_id(), '128.256.43.84', 'Moscow', 'Windeows', 'Chrome', time());
+                $this->model->addSession($_SESSION['Login'], session_id(), '128.256.43.84', 'Moscow', $this->model->getOS(), 'Chrome', time());
                 unset($_SESSION['Temp_Signup']);
                 header('Location: /');
             }
@@ -323,7 +325,6 @@ Class AccountController extends Controller{
         $this->view->render(['all' => mysqli_fetch_all($Sessions[0]), 'cur' => mysqli_fetch_all($Sessions[1])]);
     }
     
-
 
    
 

@@ -5,6 +5,7 @@
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body{
@@ -49,7 +50,7 @@ input, button{
 
 
 /* form */
-form{
+.form{
     min-width: 350px;
     border-radius: 10px;
     width: 350px;

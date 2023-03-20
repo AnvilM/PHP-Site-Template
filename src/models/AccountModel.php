@@ -42,12 +42,24 @@ class AccountModel extends Model{
 
 
     public function delSession($Login, $SessionId){
-        return $this->db->query("DELETE FROM `session` WHERE `Login` = '$Login' AND `SessionId` = '$SessionId'");
+        return $this->db->query("UPDATE `session` SET `SessionId` = 'Closed' WHERE `Login` = '$Login' AND `SessionId` = '$SessionId'");
     }
 
     public function del_all_Session($Login, $SessionId){
-        return $this->db->query("DELETE FROM `session` WHERE `Login` = '$Login' AND `SessionId` != '$SessionId'");
+        return $this->db->query("UPDATE `session` SET `SessionId` = 'Closed' WHERE `Login` = '$Login' AND `SessionId` != '$SessionId'");
     }
+
+
+    public function getOS(){
+        return $this->os->getOS();
+    }
+
+
+
+
+
+
+
 
 
 

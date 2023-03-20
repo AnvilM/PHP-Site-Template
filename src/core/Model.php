@@ -3,12 +3,15 @@
 namespace src\core;
 
 use src\lib\Db;
+use src\lib\Os;
 abstract class Model{
     
     public $db;
+    public $os;
     
     public function __construct(){
         $this->db = new Db;
+        $this->os = new Os;
         
     }
 
