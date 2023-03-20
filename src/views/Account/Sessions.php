@@ -64,7 +64,7 @@
                     $device = preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $vars['all'][$i][4]) ? 'phone' : 'pc';
                     
                     echo '
-                    <div class="element" onclick="aboutShow(`'.$vars['all'][$i][3].'`, `'.date('j.n.Y в H:i', $vars['all'][$i][7]).'`, `'.date('j.n.Y в H:i', $vars['all'][$i][6]).'`, `'.$vars['all'][$i][5].'`, `'.$vars['all'][$i][2].'`, `'.$vars['all'][$i][4].'`, `'.$device.'`, `true`)">
+                    <div class="element element-closed">
                         <div class="icon">
                             <img src="/public/icons/closed-'.$device.'-icon.svg" alt="">
                         </div>
